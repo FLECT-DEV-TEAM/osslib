@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>#{get 'title' /}</title>
+<meta charset="utf-8">
+<link rel="stylesheet" media="screen" href="/public/stylesheets/style.css">
+<link rel="stylesheet" media="screen" href="/public/stylesheets/osslib.css">
+#{get 'moreStyles' /}
+<link rel="shortcut icon" type="image/ico" href="/public/images/favicon.ico">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+#{get 'moreScripts' /}
+</head>
+<body>
+<div id="container">
+<div id="header">
+	<div id="logo">
+		<a href="http://www.flect.co.jp/index.html"><img class="logo" src="/public/images/logo_flect.png" alt="FLECT" /></a>
+	</div>
+	<h1 class="fontSize24">OSS Library</h1>
+	<div id="languages">
+		<ul class="fontSize16">
+			<li><a href="/lang/en">English</a></li>
+			<li><a href="/lang/ja">Japanese</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="contentWrap" class="boxShadow">
+<div id="content">
+#{doLayout /}
+</div>
+<div>
+<div id="footer" class="boxShadow">
+<div class="copyright fontSize9 clearFix">COPYRIGHT（C）FLECT CO.,LTD. ALL RIGHTS RESERVED</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,8 +1,20 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'FLECT OSS Library' /}
 <div class="contentHead">
 	<h2 class="fontSize24">Overview</h2>
 	<div class="fontSize16">
+#{if lang == "ja"}
+		<p>
+			<a href="http://www.flect.co.jp/index.html">FLECT</a>ではいくつかのライブラリとアプリケーションをgithub上で公開しています。
+		</p>
+		<p>
+			このページはそれらのプロジェクトのインデックスです。
+		</p>
+		<p>
+			どなたでもこれらのライブラリとアプリケーションを自由に使用することができます。(ただし無保証です。)
+		</p>
+#{/if}
+#{else}
 		<p>
 			Our company <a href="http://www.flect.co.jp/index.html">FLECT</a> are developing some libraries and applications that are published in the github.
 		</p>
@@ -12,26 +24,100 @@
 		<p>
 			Anyone can use these libraries and applications with no warranty.
 		</p>
+#{/else}
 	</div>
 </div>
 <div class="contentData">
 	<h2 class="fontSize24">Libraries</h2>
 	<div>
 		<h3 class="fontSize18">sendgrid4j</h3>
-		<p class="fontSize14">Simple SendGridClient for Java.</p>
-		<a class="detail" href="libs/sendgrid4j.html">View detail</a>
+#{if lang == "ja"}
+		<p class="fontSize14"><a href="http://sendgrid.com/" target="_blank">SendGrid</a>のWebAPIのJavaラッパーです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">Simple <a href="http://sendgrid.com/" target="_blank">SendGrid</a> client for Java.</p>
+#{/else}
+		<a class="detail" href="/libs/sendgrid4j.html">&{"viewDetail"}</a>
+	</div>
+	<div>
+		<h3 class="fontSize18">papertrailTool</h3>
+#{if lang == "ja"}
+		<p class="fontSize14"><a href="https://papertrailapp.com/" target="_blank">Papertrail</a>のWebAPIのJavaラッパーとログ解析のためのライブラリです</p>
+#{/if}
+#{else}
+		<p class="fontSize14">Simple <a href="https://papertrailapp.com/" target="_blank">Papertrail</a> client for java and tools for log analyzing.</p>
+#{/else}
+		<a class="detail" href="/libs/papertratilTool.html">&{"viewDetail"}</a>
 	</div>
 	<div>
 		<h3 class="fontSize18">excel2canvas</h3>
+#{if lang == "ja"}
+		<p class="fontSize14">ExcelファイルをWebブラウザ上に表示するためのJavaとJavaScriptのライブラリです。</p>
+#{/if}
+#{else}
 		<p class="fontSize14">Java and JavaScript library to display Excel sheet on the web</p>
-		<a class="detail" href="libs/excel2canvas.html">View detail</a>
+#{/else}
+		<a class="detail" href="/libs/excel2canvas.html">&{"viewDetail"}</a>
+	</div>
+	<div>
+		<h3 class="fontSize18">flectCommon</h3>
+#{if lang == "ja"}
+		<p class="fontSize14">以下のFLECT社内ライブラリの共通クラスです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">Common library for following libraries.</p>
+#{/else}
+		<a class="detail" href="/libs/flectCommon.html">&{"viewDetail"}</a>
+	</div>
+	<div>
+		<h3 class="fontSize18">flectSoap</h3>
+#{if lang == "ja"}
+		<p class="fontSize14">テンプレートベースのシンプルなSOAPクライアントです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">Simple SOAP client for Java.</p>
+#{/else}
+		<a class="detail" href="/libs/flectSoap.html">&{"viewDetail"}</a>
+	</div>
+	<div>
+		<h3 class="fontSize18">flectSalesforce</h3>
+#{if lang == "ja"}
+		<p class="fontSize14"><a href="http://www.salesforce.com/" target="_blank">Salesforce</a>のSOAP APIラッパーです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14"><a href="http://www.salesforce.com/" target="_blank">Salesforce</a> SOAP API wrapper for Java.</p>
+#{/else}
+		<a class="detail" href="/libs/excel2canvas.html">&{"viewDetail"}</a>
 	</div>
 </div>
 <div class="contentData">
 	<h2 class="fontSize24">Applications</h2>
+#{if lang == "ja"}
+	<p class="fontSize14">すべてのアプリケーションは<a href="https://www.heroku.com" target="_blank">Heroku</a>上で実行可能なようにデザインされています。</p>
+	<p class="fontSize14">次の手順でこれらのアプリケーションを実行することが可能です。</p>
+	<ol>
+		<li>githubから「git clone」</li>
+		<li>「heroku create」して「git push」</li>
+		<li>いくつかの環境変数を設定。必要に応じていくつかのAddonをインストール</li>
+	</ol>
+#{/if}
+#{else}
+	<p class="fontSize14">All applications are designed to run on <a href="https://www.heroku.com" target="_blank">Heroku</a>.</p>
+	<p class="fontSize14">You can execute these applications by following steps.</p>
+	<ol>
+		<li>git clone from github.</li>
+		<li>heroku create and git push.</li>
+		<li>set some config variables and install some Addons.</li>
+	</ol>
+#{/else}
 	<div>
 		<h3 class="fontSize18">Papertrail LogAnalyzer</h3>
-		<p class="fontSize14">Analyzing Heroku logs.</p>
-		<a class="detail" href="apps/loganalyzer.html">View detail</a>
+#{if lang == "ja"}
+		<p class="fontSize14">S3にアーカイブされたPapertrailのログを解析するアプリケーションです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">This application analyzes Papertrail logs archived in S3.</p>
+#{/else}
+		<a class="detail" href="/apps/loganalyzer.html">&{"viewDetail"}</a>
 	</div>
 </div>

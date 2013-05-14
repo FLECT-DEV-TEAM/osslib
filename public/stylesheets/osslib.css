@@ -11,11 +11,15 @@ h1 { margin-left: 40px;}
 	-moz-border-bottom-left-radius: 10px; -moz-border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
 
-.contentData p { margin-bottom: 30px; padding: 20px 30px 20px 30px;}
+.contentData p { margin-bottom: 5px; padding: 0px 20px 0px 20px;}
+.contentData div p { margin-bottom: 30px; padding: 20px 30px 20px 30px;}
 .contentData .detail { position: absolute; bottom: 20px; right: 20px; padding: 2px 10px; color: #fff; text-decoration: none; font-weight: bold; background: #ff9900;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;}
+
+.contentData ol { margin-top: 20px;margin-left: 30px;}
+.contentData ol li { margin-bottom: 10px; list-style: decimal;margin-left: 30px}
 
 #languages { float:right;}
 #languages ul { list-style:none;}

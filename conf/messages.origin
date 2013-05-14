@@ -1,0 +1,15 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+
+english=English
+english[ja]=英語
+
+japanese=Japanese
+japanese[ja]=日本語
+
+returnToIndex=Return to index
+returnToIndex[ja]=インデックスに戻る
+
+viewDetail=View detail
+viewDetail[ja]=詳細

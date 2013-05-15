@@ -11,12 +11,13 @@
 <script src="/public/javascripts/ext/socialbutton/jquery.socialbutton.js"></script>
 <script>
 $(function() {
+	var base = "${request.getBase()}/";
 	var url = "${request.getBase() + request.path}";
 	var lang = "${lang}";
 	
 	$("#twitter").socialbutton("twitter", {
 		"button" : "horizontal",
-		"url" : url,
+		"url" : base,
 		"lang" : lang
 	});
 	$("#facebook").socialbutton("facebook_like", {

@@ -6,6 +6,36 @@
 	<a class="github" href="https://github.com/shunjikonishi/${filename}"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	<hr>
 	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p>sendgrid4jはJavaで実装された<a href="http://sendgrid.com/" target="_blank">SendGrid</a>のWebAPIのラッパーです。</p>
+	<p>以下の機能がサポートされています。</p>
+	<ul>
+		<li>メール送信(WebAPI)<br>
+			<ul>
+				<li>複数の添付ファイルを添付可能</li>
+				<li>カテゴリの設定</li>
+			</ul>
+		</li>
+		<li>Email Reportsの取得<br>
+			<ul>
+				<li>Bounces</li>
+				<li>Blocks</li>
+				<li>Spam reports</li>
+				<li>Invalid emails</li>
+				<li>Unsubscribes</li>
+			</ul>
+		</li>
+		<li>Statisticsの取得</li>
+		<li>アプリケーション設定<br>
+			<ul>
+				<li>AddressWhiteList</li>
+				<li>Bcc</li>
+				<li>その他</li>
+			</ul>
+		</li>
+	</ul>
+#{/if}
+#{else}
 	<p>sendgrid4j is a WebAPI wrapper for <a href="http://sendgrid.com/" target="_blank">SendGrid</a> implemented by Java.</p>
 	<p>Following features are supported</p>
 	<ul>
@@ -33,9 +63,15 @@
 			</ul>
 		</li>
 	</ul>
+#{/else}
 	<hr>
 	<h2 class="fontSize24">&{"usage"}</h2>
+#{if lang == "ja"}
+	<p>メール送信</p>
+#{/if}
+#{else}
 	<p>Send mail</p>
+#{/else}
 	<pre>
     SendGridClient client = new SendGridClient(USERNAME, PASSWORD);
     WebMail mail = new WebMail();
@@ -53,7 +89,12 @@
     mail.setCategory("test");
     
     client.mail(mail);</pre>
+#{if lang == "ja"}
+	<p>Bounce一覧の取得</p>
+#{/if}
+#{else}
     <p>Get bounces</p>
+#{/else}
     <pre>
     SendGridClient client = new SendGridClient(USERNAME, PASSWORD);
     
@@ -63,7 +104,12 @@
     for (Bounce bounce : list) {
         System.out.println(bounce.getEmail());
     }</pre>
+#{if lang == "ja"}
+	<p>Statisticsの取得</p>
+#{/if}
+#{else}
 	<p>Get statistics</p>
+#{/else}
 	<pre>
     SendGridClient client = new SendGridClient(USERNAME, PASSWORD);
     Statistic.Get request = new Statistic.Get();
@@ -91,10 +137,18 @@
             "RepeatSpamReports = " + stat.getRepeatSpamReports() + ", " +
             "");
     }</pre>
+#{if lang == "ja"}
+    <p>それぞれのクラスはSendGridのリクエストパラメータ、またはレスポンスJSONのシンプルなラッパーです。</p>
+    <p>各クラスのプロパティの詳細についてはSendGridのAPIドキュメントをご確認ください。</p>
+    <p class="p10"><a href="http://sendgrid.com/docs/API_Reference/Web_API/index.html" target="_blank">http://sendgrid.com/docs/API_Reference/Web_API/index.html</a></p>
+    <p class="p20">すべてのメソッドはSendGridClientから実行されます。<a href="https://github.com/shunjikonishi/sendgrid4j/blob/master/src/main/java/jp/co/flect/sendgrid/SendGridClient.java" target="_blank">SendGridClient.java</a>のソースコードを見ることでできることが何かはだいたいわかると思います。</p>
+#{/if}
+#{else}
     <p>Each classes are the simple wrapper of WebAPI parameters or response JSON.</p>
     <p>Please see the SendGrid WebAPI documentation to know the meaning of each properties.</p>
     <p class="p10"><a href="http://sendgrid.com/docs/API_Reference/Web_API/index.html" target="_blank">http://sendgrid.com/docs/API_Reference/Web_API/index.html</a></p>
     <p class="p20">All methods are called from SendGridClient class, so you can understand what this can do by seeing <a href="https://github.com/shunjikonishi/sendgrid4j/blob/master/src/main/java/jp/co/flect/sendgrid/SendGridClient.java" target="_blank">SendGridClient.java</a>.</p>
+#{/else}
 	<hr>
 	<h2 class="fontSize24">&{"license"}</h2>
 	<p>MIT</p>

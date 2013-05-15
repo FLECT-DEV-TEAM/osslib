@@ -495,6 +495,7 @@ function socialbutton_facebook_like(target, options, defaults, index, max_index)
 		'font': font,
 		'colorscheme': colorscheme,
 		'height': height,
+		"send": "false",
 		"appId": appId
 	});
 

@@ -1,9 +1,8 @@
 @charset "utf-8";
 
-h1 { margin-left: 40px;}
-
 #content .contentHead { margin-bottom: 50px;}
 #content .contentData { margin-bottom: 50px;}
+#content .contentDetail { margin-bottom: 50px;}
 
 .contentData h3 { margin-top: 5px; margin-bottom: 0; padding-top: 2px; padding-bottom: 2px; padding-left: 15px; background: #449dff; color: #fff}
 .contentData div { position: relative; width: 800px; height: auto; border: 1px solid #ccc; border-top: none; margin-bottom: 30px;
@@ -13,7 +12,12 @@ h1 { margin-left: 40px;}
 
 .contentData p { margin-bottom: 5px; padding: 0px 20px 0px 20px;}
 .contentData div p { margin-bottom: 30px; padding: 20px 30px 20px 30px;}
-.contentData .detail { position: absolute; bottom: 20px; right: 20px; padding: 2px 10px; color: #fff; text-decoration: none; font-weight: bold; background: #ff9900;
+.contentData .detail { position: absolute; bottom: 20px; right: 80px; padding: 2px 10px; color: #fff; text-decoration: none; font-weight: bold; background: #ff9900;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;}
+
+.contentData .github { position: absolute; bottom: 10px; right: 20px; padding: 2px 10px; color: #fff; text-decoration: none; font-weight: bold; 
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;}
@@ -21,7 +25,28 @@ h1 { margin-left: 40px;}
 .contentData ol { margin-top: 20px;margin-left: 30px;}
 .contentData ol li { margin-bottom: 10px; list-style: decimal;margin-left: 30px}
 
-#languages { float:right;}
+#languages { position: absolute; bottom: 0; right:0;}
 #languages ul { list-style:none;}
 #languages li { display:inline; padding-right: 20px; color: #ccc; font-weight: bold;}
 #languages a:hover { outline:none; text-decoration:none;}
+
+#social { position: absolute; top: 10; right: 0;}
+#social div { float: right;}
+
+.contentDetail .detail { position: absolute; top: 20px; right: 80px; padding: 2px 10px; color: #fff; text-decoration: none; font-weight: bold; background: #ff9900;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;}
+
+.contentDetail .github { position: absolute; top: 10px; right: 20px; padding: 2px 10px; color: #fff; text-decoration: none; font-weight: bold; 
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;}
+
+.contentDetail p { font-size: 14px; margin-bottom: 2px;}
+.contentDetail ul li { list-style: disc; margin-left: 30px;}
+
+.p10 { margin-top: 10px;}
+.p20 { margin-top: 20px;}
+
+pre { border: 1px solid #ddd; background: #f8f8f8; margin-top: 10px; margin-bottom:20px;}

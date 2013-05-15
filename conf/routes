@@ -6,8 +6,8 @@
 GET     /                                       Application.toIndex
 GET     /index.html                             Application.index
 GET     /lang/{<en|ja>lang}                     Application.changeLang(lang)
-GET     /apps/{filename}                        Application.view(filename)
-GET     /libs/{filename}                        Application.view(filename)
+GET     /apps/{filename}.html                   Application.view(filename)
+GET     /libs/{filename}.html                   Application.view(filename)
 
 # Ignore favicon requests
 GET     /favicon.ico                            staticFile:public/images/favicon.ico

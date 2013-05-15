@@ -1,6 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'FLECT OSS Library' /}
 <div class="contentHead">
+	<h1 class="fontSize36">OSS Library</h1>
 	<h2 class="fontSize24">Overview</h2>
 	<div class="fontSize16">
 #{if lang == "ja"}
@@ -38,6 +39,7 @@
 		<p class="fontSize14">Simple <a href="http://sendgrid.com/" target="_blank">SendGrid</a> client for Java.</p>
 #{/else}
 		<a class="detail" href="/libs/sendgrid4j.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/sendgrid4j"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	</div>
 	<div>
 		<h3 class="fontSize18">papertrailTool</h3>
@@ -48,6 +50,7 @@
 		<p class="fontSize14">Simple <a href="https://papertrailapp.com/" target="_blank">Papertrail</a> client for java and tools for log analyzing.</p>
 #{/else}
 		<a class="detail" href="/libs/papertratilTool.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/papertrailTool"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	</div>
 	<div>
 		<h3 class="fontSize18">excel2canvas</h3>
@@ -58,6 +61,7 @@
 		<p class="fontSize14">Java and JavaScript library to display Excel sheet on the web</p>
 #{/else}
 		<a class="detail" href="/libs/excel2canvas.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/excel2canvas"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	</div>
 	<div>
 		<h3 class="fontSize18">flectCommon</h3>
@@ -68,6 +72,7 @@
 		<p class="fontSize14">Common library for following libraries.</p>
 #{/else}
 		<a class="detail" href="/libs/flectCommon.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/flectCommon"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	</div>
 	<div>
 		<h3 class="fontSize18">flectSoap</h3>
@@ -78,16 +83,18 @@
 		<p class="fontSize14">Simple SOAP client for Java.</p>
 #{/else}
 		<a class="detail" href="/libs/flectSoap.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/flectSoap"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	</div>
 	<div>
 		<h3 class="fontSize18">flectSalesforce</h3>
 #{if lang == "ja"}
-		<p class="fontSize14"><a href="http://www.salesforce.com/" target="_blank">Salesforce</a>のSOAP APIラッパーです。</p>
+		<p class="fontSize14"><a href="http://www.salesforce.com/" target="_blank">Salesforce</a>の<a href="http://www.salesforce.com/us/developer/docs/api/index.htm" target="_blank">SOAP API</a>ラッパーです。</p>
 #{/if}
 #{else}
-		<p class="fontSize14"><a href="http://www.salesforce.com/" target="_blank">Salesforce</a> SOAP API wrapper for Java.</p>
+		<p class="fontSize14"><a href="http://www.salesforce.com/" target="_blank">Salesforce</a> <a href="http://www.salesforce.com/us/developer/docs/api/index.htm" target="_blank">SOAP API</a> wrapper for Java.</p>
 #{/else}
-		<a class="detail" href="/libs/excel2canvas.html">&{"viewDetail"}</a>
+		<a class="detail" href="/libs/flectSalesforce.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/flectSalesforce"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	</div>
 </div>
 <div class="contentData">
@@ -118,6 +125,7 @@
 #{else}
 		<p class="fontSize14">This application analyzes Papertrail logs archived in S3.</p>
 #{/else}
-		<a class="detail" href="/apps/loganalyzer.html">&{"viewDetail"}</a>
+		<a class="detail" href="/apps/papertrail-log-analyze.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/papertrail-log-analyze"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	</div>
 </div>

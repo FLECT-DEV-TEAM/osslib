@@ -1,11 +1,25 @@
 package controllers;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import play.mvc.Controller;
 import play.i18n.Lang;
 
 public class Application extends Controller {
+	
+	private static final List<String> PROJECT_LIST = new ArrayList<String>();
+	
+	static {
+		PROJECT_LIST.add("sendgrid4j");
+		PROJECT_LIST.add("papertrailTool");
+		PROJECT_LIST.add("excel2canvas");
+		PROJECT_LIST.add("flectCommon");
+		PROJECT_LIST.add("flectSoap");
+		PROJECT_LIST.add("flectSalesforce");
+		PROJECT_LIST.add("papertrail-log-analyze");
+	}
 	
 	public static void index() {
 		render();
@@ -23,11 +37,14 @@ public class Application extends Controller {
 	}
 	
 	public static void view(String filename) {
-		File f = new File("app/views/application/" + filename);
-		if (!f.exists()) {
-			filename = "underconstruction.html";
+		if (!PROJECT_LIST.contains(filename)) {
+			notFound();
 		}
-		renderTemplate("application/" + filename);
+		File f = new File("app/views/contents/" + filename + ".html");
+		if (!f.exists()) {
+			f = new File("app/views/contents/underconstruction.html");
+		}
+		renderTemplate("contents/" + f.getName(), filename);
 	}
 
 }

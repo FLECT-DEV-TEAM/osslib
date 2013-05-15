@@ -8,6 +8,29 @@
 #{get 'moreStyles' /}
 <link rel="shortcut icon" type="image/ico" href="/public/images/favicon.ico">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/public/javascripts/ext/socialbutton/jquery.socialbutton.js"></script>
+<script>
+$(function() {
+	var url = "${request.getBase() + request.path}";
+	var lang = "${lang}";
+	
+	$("#twitter").socialbutton("twitter", {
+		"button" : "horizontal",
+		"url" : url,
+		"lang" : lang
+	});
+	$("#facebook").socialbutton("facebook_like", {
+		"url" : url,
+		"button" : "button_count",
+		"width" : lang == "ja" ? 110 : 90,
+		"locale" : lang == "ja" ? "ja_JP" : "en_US",
+	});
+	$("#google").socialbutton("google_plusone", {
+		"lang" : lang,
+		"size" : "medium"
+	});
+});
+</script>
 #{get 'moreScripts' /}
 </head>
 <body>
@@ -16,7 +39,11 @@
 	<div id="logo">
 		<a href="http://www.flect.co.jp/index.html"><img class="logo" src="/public/images/logo_flect.png" alt="FLECT" /></a>
 	</div>
-	<h1 class="fontSize24">OSS Library</h1>
+	<div id="social">
+		<div id="google"></div>
+		<div id="facebook"></div>
+		<div id="twitter" style="width:95px;"></div>
+	</div>
 	<div id="languages">
 		<ul class="fontSize16">
 			<li><a href="/lang/en">&{"english"}</a></li>
@@ -24,7 +51,6 @@
 		</ul>
 	</div>
 </div>
-
 <div id="contentWrap" class="boxShadow">
 <div id="content">
 #{doLayout /}

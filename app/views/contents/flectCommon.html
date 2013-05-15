@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library' /}
+<div class="contentDetail">
+	<h1 class="fontSize36">flectCommon</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	<a class="github" href="https://github.com/shunjikonishi/${filename}"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p>社内で使用している雑多な小物ライブラリです。</p>
+	<p>これ自体に特筆すべき機能はありませんが、<a href="flectSoap.html">flectSOAP</a>や<a href="flectSalesforce.html">flectSalesforce</a>のベースライブラリとなっています。</p>
+#{/if}
+#{else}
+	<p>This is a small library for internal use.</p>
+	<p>This library doesn't have noteworthy features, but it's a base library for <a href="flectSoap.html">flectSOAP</a> and <a href="flectSalesforce.html">flectSalesforce</a>.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

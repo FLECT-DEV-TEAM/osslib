@@ -439,6 +439,7 @@ function socialbutton_facebook_like(target, options, defaults, index, max_index)
 	var locale = options.locale || defaults.locale;
 	var font = options.font || defaults.font;
 	var colorscheme = options.colorscheme || defaults.colorscheme;
+	var appId = options.appId;
 
 	if (options.url) {
 		url = decodeURIComponent(url);
@@ -493,7 +494,8 @@ function socialbutton_facebook_like(target, options, defaults, index, max_index)
 		'locale': locale,
 		'font': font,
 		'colorscheme': colorscheme,
-		'height': height
+		'height': height,
+		"appId": appId
 	});
 
 	var tag = '<iframe src="http://www.facebook.com/plugins/like.php?' + params + '" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:' + width + 'px; height:' + height + 'px;" allowTransparency="true"></iframe>';

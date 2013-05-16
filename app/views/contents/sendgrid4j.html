@@ -67,6 +67,20 @@
 	<hr>
 	<h2 class="fontSize24">&{"usage"}</h2>
 #{if lang == "ja"}
+    <p>それぞれのクラスはSendGridのリクエストパラメータ、またはレスポンスJSONのシンプルなラッパーです。</p>
+    <p>各クラスのプロパティの詳細についてはSendGridのAPIドキュメントをご確認ください。</p>
+    <p class="p10"><a href="http://sendgrid.com/docs/API_Reference/Web_API/index.html" target="_blank">http://sendgrid.com/docs/API_Reference/Web_API/index.html</a></p>
+    <p class="p20">すべてのメソッドはSendGridClientから実行されます。<a href="https://github.com/shunjikonishi/sendgrid4j/blob/master/src/main/java/jp/co/flect/sendgrid/SendGridClient.java" target="_blank">SendGridClient.java</a>のソースコードを見ることでできることが何かはだいたいわかると思います。</p>
+#{/if}
+#{else}
+    <p>Each classes are the simple wrapper of WebAPI parameters or response JSON.</p>
+    <p>Please see the SendGrid WebAPI documentation to know the meaning of each properties.</p>
+    <p class="p10"><a href="http://sendgrid.com/docs/API_Reference/Web_API/index.html" target="_blank">http://sendgrid.com/docs/API_Reference/Web_API/index.html</a></p>
+    <p class="p20">All methods are called from SendGridClient class, so you can understand what this can do by seeing <a href="https://github.com/shunjikonishi/sendgrid4j/blob/master/src/main/java/jp/co/flect/sendgrid/SendGridClient.java" target="_blank">SendGridClient.java</a>.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"sample"}</h2>
+#{if lang == "ja"}
 	<p>メール送信</p>
 #{/if}
 #{else}
@@ -75,17 +89,17 @@
 	<pre>
     SendGridClient client = new SendGridClient(USERNAME, PASSWORD);
     WebMail mail = new WebMail();
-    //Set from and to information
+    <span class="comment">//Set from and to information</span>
     mail.setFrom("test@flect.co.jp");
     mail.setTo("test@flect.co.jp");
     mail.setFromName("test");
     mail.setToName("test");
     
-    //Subject and text(or You can use setHtml)
+    <span class="comment">//Subject and text(or You can use setHtml)</span>
     mail.setSubject("Test - " + new Date());
     mail.setText("This is a test mail");
     
-    //Category(X-SMTPAPI option)
+    <span class="comment">//Category(X-SMTPAPI option)</span>
     mail.setCategory("test");
     
     client.mail(mail);</pre>
@@ -113,7 +127,7 @@
 	<pre>
     SendGridClient client = new SendGridClient(USERNAME, PASSWORD);
     Statistic.Get request = new Statistic.Get();
-    //request.setCategory("test");
+    <span class="comment">//request.setCategory("test");</span>
     request.setDays(10);
     List<Statistic> list = client.getStatistics(request);
     for (Statistic stat : list) {
@@ -137,18 +151,6 @@
             "RepeatSpamReports = " + stat.getRepeatSpamReports() + ", " +
             "");
     }</pre>
-#{if lang == "ja"}
-    <p>それぞれのクラスはSendGridのリクエストパラメータ、またはレスポンスJSONのシンプルなラッパーです。</p>
-    <p>各クラスのプロパティの詳細についてはSendGridのAPIドキュメントをご確認ください。</p>
-    <p class="p10"><a href="http://sendgrid.com/docs/API_Reference/Web_API/index.html" target="_blank">http://sendgrid.com/docs/API_Reference/Web_API/index.html</a></p>
-    <p class="p20">すべてのメソッドはSendGridClientから実行されます。<a href="https://github.com/shunjikonishi/sendgrid4j/blob/master/src/main/java/jp/co/flect/sendgrid/SendGridClient.java" target="_blank">SendGridClient.java</a>のソースコードを見ることでできることが何かはだいたいわかると思います。</p>
-#{/if}
-#{else}
-    <p>Each classes are the simple wrapper of WebAPI parameters or response JSON.</p>
-    <p>Please see the SendGrid WebAPI documentation to know the meaning of each properties.</p>
-    <p class="p10"><a href="http://sendgrid.com/docs/API_Reference/Web_API/index.html" target="_blank">http://sendgrid.com/docs/API_Reference/Web_API/index.html</a></p>
-    <p class="p20">All methods are called from SendGridClient class, so you can understand what this can do by seeing <a href="https://github.com/shunjikonishi/sendgrid4j/blob/master/src/main/java/jp/co/flect/sendgrid/SendGridClient.java" target="_blank">SendGridClient.java</a>.</p>
-#{/else}
 	<hr>
 	<h2 class="fontSize24">&{"license"}</h2>
 	<p>MIT</p>

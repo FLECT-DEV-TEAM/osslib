@@ -16,12 +16,14 @@
 				<li>SQLライクなINSERT文やDELETE文によるデータ更新</li>
 			</ul>
 		</li>
+		<li>メタデータ取得</li>
 		<li>Bulk API<br>
 			<ul>
 				<li>RDBのSELECT文からの直接Bulk Upsert</li>
 			</ul>
 		</li>
 		<li>Metadata API(一部のみ)</li>
+		<li>OAuthログイン</li>
 	</ul>
 	<p class="p20">※ 社内で必要な機能から実装されるため、すべての機能が網羅的に実装されることはおそらくありません。</p>
 	<p><a href="https://forceexplorer.herokuapp.com">SalesforceExplorer</a>はこのライブラリの参照実装です。</p>
@@ -36,16 +38,100 @@
 				<li>Like SQL, you can update data by insert, update, and delete statement.</li>
 			</ul>
 		</li>
+		<li>Retrieving metadata</li>
 		<li>Bulk API<br>
 			<ul>
 				<li>You can do bulk upsert directly from SQL.</li>
 			</ul>
 		</li>
 		<li>Metadata API(Partial implementation)</li>
+		<li>Login with OAuth</li>
 	</ul>
 	<p class="p20">I've developed only required features. Probably this library will not implement all of Salesforce features. </p>
 	<p><a href="https://forceexplorer.herokuapp.com">SalesforceExplorer</a> is a reference implementation of this library.</p>
 #{/else}
+	<hr>
+	<h2 class="fontSize24">&{"sample"}</h2>
+#{if lang == "ja"}
+	<p>ログイン</p>
+#{/if}
+#{else}
+	<p>Login</p>
+#{/else}
+	<pre>
+    SalesforceClient client = new SalesforceClient(new File("partner.wsdl"));
+    UserInfo userInfo = client.login(SALESFORCE_USERNAME, SALESFORCE_PASSWORD, SALESFORCE_SECURITY_TOKEN);
+    System.out.println(userInfo.getUserName() + ", " + userInfo.getDisplayName());</pre>
+#{if lang == "ja"}
+	<p>クエリー</p>
+#{/if}
+#{else}
+	<p>Query</p>
+#{/else}
+	<pre>
+    QueryResult<SObject> result = client.query("SELECT ID, NAME FROM Account");
+    for (SObject obj : result.getRecords()) {
+        System.out.println(obj.getId() + ", " + obj.getString("Name"));
+    }</pre>
+#{if lang == "ja"}
+	<p>Metadataの取得</p>
+#{/if}
+#{else}
+	<p>Retrieving metadata</p>
+#{/else}
+	<pre>
+    SObjectDef objectDef = client.describeSObject("Account");
+    if (objectDef != null) {
+        for (FieldDef field : objectDef.getFieldList()) {
+            System.out.println(field.getName() + ", " + field.getLabel() + ", " + field.getFieldType());
+        }
+    }</pre>
+#{if lang == "ja"}
+	<p>オブジェクトの作成</p>
+#{/if}
+#{else}
+	<p>Creating object</p>
+#{/else}
+	<pre>
+    SObject parent = client.newObject("parent__c");
+    parent.set("ExId__c", "xxxx");
+    
+    List<SObject> list = new ArrayList<SObject>();
+    for (int i=0; i<10; i++) {
+        SObject child = client.newObject("child__c");
+        child.setName("test_" + (i+1));
+        child.set("parent__r", parent);
+    }
+    List<SaveResult> resultList = client.create(list);
+    for (SaveResult result : resultList) {
+        System.out.println(result.isCreated() + ", " + result.getId());
+    }</pre>
+#{if lang == "ja"}
+	<p>Insert文、Delete文</p>
+#{/if}
+#{else}
+	<p>Insert and delete statement</p>
+#{/else}
+	<pre>
+    String insert = "insert into test__c (name, int__c, date__c) values(?, ?, ?)";
+    for (int i=0; i<10; i++) {
+        DmlResult ret = client.executeUpdate(insert, "test_" + (i+1), i+1, new Date());
+        System.out.println(ret.getSuccessCoount() == 1 ? "OK" : "NG");
+    }
+    DmlResult ret2 = client.executeUpdate("delete from test__c where int__c <= ?", 5);
+    System.out.println("DeleteCount = " + ret2.getSuccessCount());<span class="comment">//5</span></pre>
+#{if lang == "ja"}
+	<p>RDBのSELECT結果をBulkUpsert</p>
+#{/if}
+#{else}
+	<p>Bulk upsert from select statement.</p>
+#{/else}
+	<pre>
+    java.sql.Connection con;
+    String sql = "SELECT Id as ExId__c, Name as Text__c, ParentId as \"parent__r.ExId__c FROM table1";
+    SQLSyncRequest request = new SQLSyncRequest(con, sql, "test__c");
+    request.setExternalIdFieldName("ExId__c");
+    client.syncSQL(request);</pre>
 	<hr>
 	<h2 class="fontSize24">&{"license"}</h2>
 	<p>MIT</p>

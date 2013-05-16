@@ -15,6 +15,41 @@
 	<p>This is a full scratch implementation of SOAP.(Not depend on Apache Axis or Apache SOAP)</p>
 #{/else}
 	<hr>
+	<h2 class="fontSize24">&{"sample"}</h2>
+#{if lang == "ja"}
+	<p>以下はSalesforceにログインする処理のサンプルです。</p>
+	<p>※Salesforceに接続する場合は<a href="flectSalesforce.html">flectSalesforce</a>を使用する方が簡単です。</p>
+#{/if}
+#{else}
+	<p>This is a sample code to login Salesforce.</p>
+	<p>(If you want to use Salesforce SOAP API, it is easier to use <a href="flectSalesforce.html">flectSalesforce</a>.)</p>
+#{/else}
+	<pre>
+    SoapClient client = new SoapClient(new File("partner.wsdl"));
+    
+    <span class="comment">//Input parameters are set in java.util.Map.
+    //Its structure is same as SOAP body.
+    //You can set values in the deep position by using ExtendedMap.</span>
+    ExtendedMap input = new ExtendedMap(true);
+    input.putDeep("login.username", SALESFORCE_USERNAME);
+    input.putDeep("login.password", SALESFORCE_PASSWORD + SALESFORCE_SECRET);
+    
+    <span class="comment">/*
+    //Above code is same as this.
+    Map<String, Object> input = new HashMap<String, Object>();
+    Map<String, Object> loginEl = new HashMap<String, Object>();
+    loginEl.put("username", SALESFORCE_USERNAME);
+    loginEl.put("password", SALESFORCE_PASSWORD + SALESFORCE_SECRET);
+    input.put("login", loginEl);
+    */</span>
+    
+    <span class="comment">//Invoke method</span>
+    SoapResponse res = client.invoke("login", null, input);
+    ExtendedMap output = res.getAsMap();
+    String sessionId = (String)output.getDeep("loginResponse.result.sessionId");
+    String endpont = (String)output.getDeep("loginResponse.result.serverUrl");
+    client.setEndpoint(endpoint);</pre>
+	<hr>
 	<h2 class="fontSize24">&{"license"}</h2>
 	<p>MIT</p>
 </div>

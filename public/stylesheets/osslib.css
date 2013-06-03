@@ -44,6 +44,7 @@
 	border-radius: 3px;}
 
 .contentDetail p { font-size: 14px; margin-bottom: 2px;}
+.contentDetail ul { margin-top: 10px; margin-bottom: 20px;}
 .contentDetail ul li { list-style: disc; margin-left: 30px;}
 
 .p10 { margin-top: 10px;}

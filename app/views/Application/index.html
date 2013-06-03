@@ -30,6 +30,24 @@
 </div>
 <div class="contentData">
 	<h2 class="fontSize24">Libraries</h2>
+#{if lang == "ja"}
+	<p class="fontSize14">ライブラリはGitHub上に構築されたMaven repositoryからも取得することができます。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">You can get these libraries from our maven repository built on GitHub.</p>
+#{/else}
+	<pre style="width:800px;">#{repository /}</pre>
+	<div>
+		<h3 class="fontSize18">excel2canvas</h3>
+#{if lang == "ja"}
+		<p class="fontSize14">ExcelファイルをWebブラウザ上に表示するためのJavaとJavaScriptのライブラリです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">Java and JavaScript library to display Excel sheet on the web</p>
+#{/else}
+		<a class="detail" href="/libs/excel2canvas.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/excel2canvas"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
+	</div>
 	<div>
 		<h3 class="fontSize18">sendgrid4j</h3>
 #{if lang == "ja"}
@@ -51,17 +69,6 @@
 #{/else}
 		<a class="detail" href="/libs/papertrailTool.html">&{"viewDetail"}</a>
 		<a class="github" href="https://github.com/shunjikonishi/papertrailTool"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
-	</div>
-	<div>
-		<h3 class="fontSize18">excel2canvas</h3>
-#{if lang == "ja"}
-		<p class="fontSize14">ExcelファイルをWebブラウザ上に表示するためのJavaとJavaScriptのライブラリです。</p>
-#{/if}
-#{else}
-		<p class="fontSize14">Java and JavaScript library to display Excel sheet on the web</p>
-#{/else}
-		<a class="detail" href="/libs/excel2canvas.html">&{"viewDetail"}</a>
-		<a class="github" href="https://github.com/shunjikonishi/excel2canvas"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	</div>
 	<div>
 		<h3 class="fontSize18">flectCommon</h3>
@@ -127,5 +134,67 @@
 #{/else}
 		<a class="detail" href="/apps/papertrail-log-analyze.html">&{"viewDetail"}</a>
 		<a class="github" href="https://github.com/shunjikonishi/papertrail-log-analyze"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
+	</div>
+#{if lang == "ja"}
+	<div>
+		<h3 class="fontSize18">SQLSync</h3>
+#{if lang == "ja"}
+		<p class="fontSize14">RDBMSにあるデータを定期的にSalesforceに同期するアプリケーションです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">Daily synchronizing from RDBMS to Salesforce.</p>
+#{/else}
+		<a class="detail" href="/apps/sqlsync.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/sqlsync"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
+	</div>
+#{/if}
+</div>
+<div class="contentData">
+	<h2 class="fontSize24">Heroku buildpack</h2>
+#{if lang == "ja"}
+	<p class="fontSize14"><a href="https://www.heroku.com" target="_blank">Heroku</a>のbuildpackです。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">Buildpacks of <a href="https://www.heroku.com" target="_blank">Heroku</a>.</p>
+#{/else}
+	<div>
+		<h3 class="fontSize18">heroku-buildpack-ffmpeg</h3>
+#{if lang == "ja"}
+		<p class="fontSize14"><a href="http://www.ffmpeg.org/" target="_blank">ffmpeg</a>をHerokuに組み込むためのBuildpackです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">Install <a href="http://www.ffmpeg.org/" target="_blank">ffmpeg</a> into Heroku.</p>
+#{/else}
+		<a class="detail" href="/libs/heroku-buildpack-ffmpeg.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/heroku-buildpack-ffmpeg"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
+	</div>
+</div>
+<div class="contentData">
+	<h2 class="fontSize24">Experimental Project</h2>
+#{if lang == "ja"}
+	<p class="fontSize14">将来サービス化されるかもしれない実験的なプロジェクトです。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">These are experimental projects that may be the webservice in future.</p>
+#{/else}
+	<div>
+		<h3 class="fontSize18">Excel Report</h3>
+#{if lang == "ja"}
+		<p class="fontSize14">excel2canvasを使用した帳票サービスです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">A reporting service that uses excel2canvas.</p>
+#{/else}
+		<a class="detail" href="/apps/excelReport.html">&{"viewDetail"}</a>
+	</div>
+	<div>
+		<h3 class="fontSize18">Salesforce Explorer</h3>
+#{if lang == "ja"}
+		<p class="fontSize14">SQLライクな構文でSalesforceに対して検索と更新が行えるアプリケーションです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">Query and update Salesforce data with syntax like SQL.</p>
+#{/else}
+		<a class="detail" href="/apps/forceexplorer.html">&{"viewDetail"}</a>
 	</div>
 </div>

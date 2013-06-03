@@ -1,0 +1,51 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library' /}
+<div class="contentDetail">
+	<h1 class="fontSize36">heroku-buildpack-ffmpeg</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p class="fontSize14"><a href="http://www.ffmpeg.org/" target="_blank">ffmpeg</a>をHerokuに組み込むためのBuildpackです。</p>
+	<p class="fontSize14">単体では動作しないので<a href="https://github.com/ddollar/heroku-buildpack-multi" target="_blank">heroku-buildpack-multi</a>を使用して他のbuildpackと組み合わせて使用します。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">Install <a href="http://www.ffmpeg.org/" target="_blank">ffmpeg</a> into Heroku.</p>
+	<p class="fontSize14">It doesn't do anything else, so to actually compile your app you should use <a href="https://github.com/ddollar/heroku-buildpack-multi" target="_blank">heroku-buildpack-multi</a> to combine it with a real buildpack.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"usage"}</h2>
+#{if lang == "ja"}
+	<p class="fontSize14">このbuildpackのURLと自分の使いたいオリジナルのbuildpackのURLを「.buildpacks」ファイルに記述してプロジェクトのルートディレクトリにおきます。</p>
+	<p class="fontSize14">Herokuアプリケーション作成時にはbuildpackにheroku-buildpack-multiを指定してください。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">To use this buildpack, you should prepare .buildpacks file that contains this buildpack url and your real buildpack url.</p>
+#{/else}
+	<pre>
+    $ ls
+    .buildpacks
+    ...
+    
+    $ cat .buildpacks
+    https://github.com/shunjikonishi/heroku-buildpack-ffmpeg
+    https://github.com/heroku/heroku-buildpack-play
+    
+    $ heroku create --buildpack https://github.com/ddollar/heroku-buildpack-multi
+    
+    $ git push heroku master
+    ...</pre>
+#{if lang == "ja"}
+	<p class="fontSize14">以下のコマンドでffmpegが正常にインストールされているかどうかが確認できます。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">You can verify that ffmpeg is installed correctly or not, by following command.</p>
+#{/else}
+	<pre>
+    $ heroku run "ffmpeg -version"
+    ...</pre>
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

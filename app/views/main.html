@@ -46,12 +46,14 @@ $(function() {
 		<div id="facebook"></div>
 		<div id="twitter" style="width:95px;"></div>
 	</div>
+#{if project == null || project.hasEnglish}
 	<div id="languages">
 		<ul class="fontSize16">
 			<li><a href="/lang/en">&{"english"}</a></li>
 			<li><a href="/lang/ja">&{"japanese"}</a></li>
 		</ul>
 	</div>
+#{/if}
 </div>
 <div id="contentWrap" class="boxShadow">
 <div id="content">

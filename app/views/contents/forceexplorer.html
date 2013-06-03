@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library' /}
+<div class="contentDetail">
+	<h1 class="fontSize36">Salesforce Explorer</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p class="fontSize14"><a href="../libs/flectSalesforce.html">flectSalesforce</a>のリファレンス実装です。</p>
+	<p class="fontSize14">OAuthでログインしたSalesforceに対してデータの参照、更新が実行できます。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">This is a reference implementation of <a href="../libs/flectSalesforce.html">flectSalesforce</a>.</p>
+	<p class="fontSize14">You can login to Salesforce by OAuth to querying or updateing its data.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"demo"}</h2>
+	<p><a href="http://forceexplorer.herokuapp.com/" target="_blank">http://forceexplorer.herokuapp.com/</a></p>
+</div>

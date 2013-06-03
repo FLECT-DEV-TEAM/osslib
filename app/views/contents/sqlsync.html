@@ -1,0 +1,65 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library' /}
+<div class="contentDetail">
+	<h1 class="fontSize36">SQLSync</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+	<p><a href="../libs/flectSalesforce.html">flectSalesforce</a>のsqlsyncメソッドのリファレンス実装です。</p>
+	<p>RDBMSのデータを毎日夜間バッチでSalesforceに同期します。</p>
+	<hr>
+	<h2 class="fontSize24">&{"environment"}</h2>
+	<p>このアプリケーションはPlayframework2.1で開発されており、実行のためには以下の環境が必要です。</p>
+	<ul>
+		<li>RDBMS</li>
+		<li>Salesforce</li>
+		<li>MongoDB</li>
+		<li>Memcached</li>
+	</ul>
+	<p>RDBとSalesforceはこのアプリを実行する動機となるものなので御自身でご用意ください。</p>
+	<p>MongoDBとMemcachedは単純な設定情報を保存しているだけなので最低限のスペックのもので問題ありません。</p>
+	<p>このアプリはHeroku上で動作させることを想定しており、その場合はMongoDB、Memcached共に無償版でも問題なく動きます。</p>
+	<hr>
+	<h2 class="fontSize24">&{"install"}</h2>
+	<p>このアプリをHeroku上で動作させる場合のsetupコマンドは以下です。</p>
+	<pre>${'''
+    git clone git@github.com:shunjikonishi/sqlsync.git
+    heroku create
+    git push heroku master
+    heroku addons:add mongolab:sandbox
+    heroku addons:add memcachier:dev'''}</pre>
+	<p>動作させるためには以下の環境変数の設定が必要です。</p>
+	<ul>
+		<li>DATABASE_URL: 接続するデータベースのURL(Heroku Postgresの標準書式で設定)</li>
+		<li>SALESFORCE_USERNAME: 接続するSalesforceユーザー名</li>
+		<li>SALESFORCE_PASSWORD: 接続するSalesforceユーザーのパスワード</li>
+		<li>SALESFORCE_SECRET: 接続するSalesforceユーザーのセキュリティトークン<br>
+		    ユーザープロファイルでIP制限がかかっている場合は不要です。</li>
+		<li>SALESFORCE_WSDL: 接続に使用するWSDLファイル<br>
+		    プロダクション環境に接続する場合は不要です。<br>
+		    Sandbox環境に接続する場合は「conf/salesforce/sandbox.wsdl」を指定してください。</li>
+		<li>TIMEZONE: タイムゾーン。日本で使用する場合は「Asia/Tokyo」としてください。</li>
+	</ul>
+	<p>IP制限によりSalesforceへの接続にProxyを使用する場合はさらに以下を設定してください。</p>
+	<ul>
+		<li>PROXY_HOST: Proxyサーバのホスト名</li>
+		<li>PROXY_PORT: Proxyサーバのポート。省略時は80</li>
+		<li>PROXY_USERNAME: 必要な場合Proxyサーバのユーザ名を設定</li>
+		<li>PROXY_PASSWORD: 必要な場合Proxyサーバのパスワードを設定</li>
+	</ul>
+	<p>セキュリティを確保するためにアプリへのアクセスを制限したい場合は以下を設定してください。</p>
+	<ul>
+		<li>ALLOWED_IP: 設定すると指定のIPのクライアントからしか接続できなくなります。<br>
+		    カンマ区切りで複数指定可能です。<br>
+		    「xxx.xxx.xxx.0/24」のようなサブネット表記での指定も可能です。</li>
+		<li>BASIC_AUTHENTICATION: 設定するとアクセスにBasic認証が要求されるようになります。</li>
+	</ul>
+	<p>設定が正しく行われていればHeroku上でアプリの画面が正しく表示されます。</p>
+	<hr>
+	<h2 class="fontSize24">&{"howToUse"}</h2>
+	<p>アプリ画面から「使い方」を参照してください。</p>
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

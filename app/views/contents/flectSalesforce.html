@@ -3,7 +3,7 @@
 <div class="contentDetail">
 	<h1 class="fontSize36">flectSalesforce</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
-	<a class="github" href="https://github.com/shunjikonishi/${filename}"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
+	#{linkToGithub project: project/}
 	<hr>
 	<h2 class="fontSize24">&{"overview"}</h2>
 #{if lang == "ja"}
@@ -132,6 +132,11 @@
     SQLSyncRequest request = new SQLSyncRequest(con, sql, "test__c");
     request.setExternalIdFieldName("ExId__c");
     client.syncSQL(request);</pre>
+	<hr>
+	<h2 class="fontSize24">&{"latestRelease"}</h2>
+	<p>&{"download"} - <a href="https://github.com/shunjikonishi/${filename}/archive/version-1.0.zip">1.0</a></p>
+	<p>Maven</p>
+	<pre style="width:800px;">#{repository artifactId: filename, version: "1.0"/}</pre>
 	<hr>
 	<h2 class="fontSize24">&{"license"}</h2>
 	<p>MIT</p>

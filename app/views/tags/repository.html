@@ -1,0 +1,15 @@
+    &lt;repositories>
+        &lt;repository>
+            &lt;id>jp.co.flect&lt;/id>
+            &lt;name>FLECT maven repository&lt;/name>
+            &lt;url>http://flect.github.io/maven-repo/&lt;/url>
+        &lt;/repository>
+    &lt;/repositories>#{if _artifactId != null && _version != nul}
+
+    &lt;dependencies>
+        &lt;dependency>
+            &lt;groupId>jp.co.flect&lt;/groupId>
+            &lt;artifactId>${_artifactId}&lt;/artifactId>
+            &lt;version>${_version}&lt;/version>
+        &lt;/dependency>
+    &lt;/dependencies>#{/if}

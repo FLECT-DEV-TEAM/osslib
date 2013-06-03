@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library' /}
+<div class="contentDetail">
+	<h1 class="fontSize36">excelReport</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p class="fontSize14">Excelで作成した帳票テンプレートに値を埋めてブラウザで表示あるいはダウンロードできるアプリケーションです。</p>
+	<p class="fontSize14">現在はユーザー登録機能をdisableにしておりサンプルの参照のみが行えます。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">This application allows you to create a report template by Excel. And you can embed values in it for viewing or downloading.</p>
+	<p class="fontSize14">Now feature of registering user is disabled. So you can only view samples.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"demo"}</h2>
+	<p><a href="http://excel-report.herokuapp.com/" target="_blank">http://excel-report.herokuapp.com/</a></p>
+</div>

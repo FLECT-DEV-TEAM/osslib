@@ -34,3 +34,18 @@ install[ja]=インストール
 
 license=License
 license[ja]=ライセンス
+
+environment=Environment
+environment[ja]=環境
+
+howToUse=How to use
+howToUse[ja]=使い方
+
+demo=Demo
+demo[ja]=デモ
+
+latestRelease=Latest release
+latestRelease[ja]=最新版
+
+download=Download
+download[ja]=ダウンロード

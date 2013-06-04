@@ -15,11 +15,10 @@
 		<li>RDBMS</li>
 		<li>Salesforce</li>
 		<li>MongoDB</li>
-		<li>Memcached</li>
 	</ul>
 	<p>RDBとSalesforceはこのアプリを実行する動機となるものなので御自身でご用意ください。</p>
-	<p>MongoDBとMemcachedは単純な設定情報を保存しているだけなので最低限のスペックのもので問題ありません。</p>
-	<p>このアプリはHeroku上で動作させることを想定しており、その場合はMongoDB、Memcached共に無償版でも問題なく動きます。</p>
+	<p>MongoDBは単純な設定情報を保存しているだけなので最低限のスペックのもので問題ありません。</p>
+	<p>このアプリはHeroku上で動作させることを想定しており、その場合はMongoDBは無償版でも問題なく動きます。</p>
 	<hr>
 	<h2 class="fontSize24">&{"install"}</h2>
 	<p>このアプリをHeroku上で動作させる場合のsetupコマンドは以下です。</p>
@@ -27,8 +26,7 @@
     git clone git@github.com:shunjikonishi/sqlsync.git
     heroku create
     git push heroku master
-    heroku addons:add mongolab:sandbox
-    heroku addons:add memcachier:dev'''}</pre>
+    heroku addons:add mongolab:sandbox'''}</pre>
 	<p>動作させるためには以下の環境変数の設定が必要です。</p>
 	<ul>
 		<li>DATABASE_URL: 接続するデータベースのURL(Heroku Postgresの標準書式で設定)</li>

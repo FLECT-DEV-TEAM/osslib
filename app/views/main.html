@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head prefix="og: http://ogp.me/ns#">
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Language" content="${lang}">
@@ -9,10 +9,11 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@flect_jp">
 <meta name="twitter:creator" content="@flect_jp">
-<meta name="og:url" content="${request.getBase() + request.url}">
-<meta name="og:title" content="#{get 'title' /}">
-<meta name="og:description" content="#{get 'description' /}">
-<meta name="og:image" content="${request.getBase() + "/public/images/logo_flect.png"}">
+<meta property="og:url" content="${request.getBase() + request.url}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="#{get 'title' /}">
+<meta property="og:description" content="#{get 'description' /}">
+<meta property="og:image" content="${request.getBase() + "/public/images/logo_flect.png"}">
 #{if lang == "ja"}
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:locale:alternate" content="en_US" />

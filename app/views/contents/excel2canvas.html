@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - excel2canvas' /}
+#{if lang == "ja"}
+	#{set 'description'}excel2canvasはExcelをHTML5のcanvasに描画するためのライブラリです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}excel2canvas is a library for drawing Excel file on the HTML5 canvas.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">excel2canvas</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

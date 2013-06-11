@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - Salesforce Explorer' /}
+#{if lang == "ja"}
+	#{set 'description'}Salesforce ExplorerはSalesforce上のデータにSQLライクな文法でアクセスできるアプリケーションです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}Salesforce Explorer is a web application that allows you to access Salesforce data with SQL like syntax.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">Salesforce Explorer</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - LogAnalyzer' /}
+#{if lang == "ja"}
+	#{set 'description'}LogAnalyzerはHerokuのログを解析するアプリケーションです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}LogAnalyzer is a web application for analyzing Heroku logs.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">LogAnalyzer</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

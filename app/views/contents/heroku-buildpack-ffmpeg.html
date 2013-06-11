@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - heroku-buildpack-ffmpeg' /}
+#{if lang == "ja"}
+	#{set 'description'}ffmpegをHerokuに組み込むためのbuildpackです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}A Heroku buildpack for including ffmpeg.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">heroku-buildpack-ffmpeg</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - flectSalesforce' /}
+#{if lang == "ja"}
+	#{set 'description'}flectSalesforceはSalesforce SOAP APIのJava wrapperです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}flectSalesforce is a simple Java wrapper for Salesforce SOAP API.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">flectSalesforce</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

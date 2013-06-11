@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
 #{set title:'FLECT OSS Library' /}
+#{if lang == "ja"}
+	#{set 'description'}FLECT OSS Libraryは<a href='http://www.flect.co.jp/'>株式会社 FLECT</a>の開発したオープンソースプロダクトをご紹介するページです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}FLECT OSS Library is a web site for introducing our open source products.#{/set}
+#{/else}
 <div class="contentHead">
 	<h1 class="fontSize36">FLECT OSS Library</h1>
 	<h2 class="fontSize24">&{"overview"}</h2>

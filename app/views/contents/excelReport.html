@@ -1,7 +1,13 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - ExcelReport' /}
+#{if lang == "ja"}
+	#{set 'description'}ExcelReportはExcelで設計した帳票をブラウザ上で表示、ダウンロードするためのアプリケーションです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}ExcelReport is a web application for browsing and downloading the report developed by Excel.#{/set}
+#{/else}
 <div class="contentDetail">
-	<h1 class="fontSize36">excelReport</h1>
+	<h1 class="fontSize36">ExcelReport</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
 	#{linkToGithub project: project/}
 	<hr>

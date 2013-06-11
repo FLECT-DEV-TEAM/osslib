@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - papertrailTool' /}
+#{if lang == "ja"}
+	#{set 'description'}papertrailToolはPapertrailのログを扱うためのJavaライブラリです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}papertrailTool is a Java library for Papertrail.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">papertrailTool</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

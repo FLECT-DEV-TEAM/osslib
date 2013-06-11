@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - flectCommon' /}
+#{if lang == "ja"}
+	#{set 'description'}flectCommonは社内で使用している雑多な小物ライブラリです。flectSoapとflectSalesforceのベースとなります#{/set}
+#{/if}
+#{else}
+	#{set 'description'}flectCommon is a small library for internal use. It's a base library for flectSoap and flectSalesforce.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">flectCommon</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

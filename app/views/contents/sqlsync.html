@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - SQLSync' /}
+#{if lang == "ja"}
+	#{set 'description'}SQLSyncはRDBMS上のデータを定期的にSalesforceと同期するアプリケーションです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}SQLSync is a web application for synchronizing RDBMS and Salesforce by specified schedule.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">SQLSync</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

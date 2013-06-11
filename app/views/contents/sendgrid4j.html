@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - sendgrid4j' /}
+#{if lang == "ja"}
+	#{set 'description'}sendgrid4jはSendGrid Web APIのJavaラッパーです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}sendgrid4j is a WebAPI wrapper for SendGrid.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">sendgrid4j</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

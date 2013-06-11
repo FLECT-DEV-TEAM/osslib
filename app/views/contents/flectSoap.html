@@ -1,5 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'FLECT OSS Library' /}
+#{set title:'FLECT OSS Library - flectSoap' /}
+#{if lang == "ja"}
+	#{set 'description'}flectSoapはシンプルなSOAP Clientの実装です。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}flectSoap is a simple SOAP Client for Java.#{/set}
+#{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">flectSoap</h1>
 	<a class="detail" href="/index.html">&{"returnToIndex"}</a>

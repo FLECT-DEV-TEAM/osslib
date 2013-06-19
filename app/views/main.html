@@ -69,8 +69,8 @@ $(function() {
 #{if project == null || project.hasEnglish}
 	<div id="languages">
 		<ul class="fontSize16">
-			<li><a href="/lang/en">&{"english"}</a></li>
-			<li><a href="/lang/ja">&{"japanese"}</a></li>
+			<li><a href="${request.path.replace("/ja/", "/en/")}">English</a></li>
+			<li><a href="${request.path.replace("/en/", "/ja/")}">日本語</a></li>
 		</ul>
 	</div>
 #{/if}

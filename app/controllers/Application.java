@@ -32,22 +32,26 @@ public class Application extends Controller {
 		add("forceexplorer", true, false);
 	}
 	
-	public static void index() {
+	public static void index(String lang) {
+		Lang.change(lang);
 		render();
 	}
 	
 	public static void toIndex() {
-		index();
+		String lang = Lang.get();
+		index(lang);
 	}
 	
-	public static void changeLang(String lang) {
+	public static void toContent(String filename) {
+		String lang = Lang.get();
+		String path = request.path;
+		int idx = path.indexOf('/', 2);
+		String newPath = path.substring(0, idx) + "/" + lang + path.substring(idx);
+		redirect(newPath);
+	}
+	
+	public static void view(String lang, String filename) {
 		Lang.change(lang);
-		if (!Common.redirectToPrev()) {
-			index();
-		}
-	}
-	
-	public static void view(String filename) {
 		ProjectInfo project = PROJECTS.get(filename);
 		if (project == null) {
 			notFound();

@@ -4,10 +4,14 @@
 
 # Home page
 GET     /                                       Application.toIndex
-GET     /index.html                             Application.index
-GET     /lang/{<en|ja>lang}                     Application.changeLang(lang)
-GET     /apps/{filename}.html                   Application.view(filename)
-GET     /libs/{filename}.html                   Application.view(filename)
+GET     /index.html                             Application.toIndex
+
+GET     /{<en|ja>lang}/index.html                      Application.index
+GET     /apps/{<en|ja>lang}/{filename}.html            Application.view
+GET     /libs/{<en|ja>lang}/{filename}.html            Application.view
+
+GET     /apps/{filename}.html                   Application.toContent
+GET     /libs/{filename}.html                   Application.toContent
 
 # Ignore favicon requests
 GET     /favicon.ico                            staticFile:public/images/favicon.ico

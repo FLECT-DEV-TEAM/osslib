@@ -131,6 +131,17 @@
 	</ol>
 #{/else}
 	<div>
+		<h3 class="fontSize18">SQLTool</h3>
+#{if lang == "ja"}
+		<p class="fontSize14">管理者向けRDBMSの参照ツール</p>
+#{/if}
+#{else}
+		<p class="fontSize14">A RDBMS reference tool for administrators.</p>
+#{/else}
+		<a class="detail" href="/apps/sqltool.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/sqltool"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
+	</div>
+	<div>
 		<h3 class="fontSize18">Papertrail LogAnalyzer</h3>
 #{if lang == "ja"}
 		<p class="fontSize14">S3にアーカイブされたPapertrailのログを解析するアプリケーションです。</p>

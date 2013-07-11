@@ -52,3 +52,5 @@
 
 pre { border: 1px solid #ddd; background: #f8f8f8; margin-top: 10px; margin-bottom:20px;}
 .comment { color: #2E8B57; font-style: italic;}
+
+em { font-weight: bold; color: #FF0000;}

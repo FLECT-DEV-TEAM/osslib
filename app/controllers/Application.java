@@ -25,6 +25,7 @@ public class Application extends Controller {
 		
 		add("papertrail-log-analyze", true, true);
 		add("sqlsync", false, true);
+		add("sqltool", true, true);
 		
 		add("heroku-buildpack-ffmpeg", true, true);
 		

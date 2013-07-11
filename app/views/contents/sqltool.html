@@ -1,0 +1,69 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library - SQLTool' /}
+#{if lang == "ja"}
+	#{set 'description'}SQLToolは管理者向けのRDBMS参照ツールです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}A RDBMS reference tool for admistrators.#{/set}
+#{/else}
+<div class="contentDetail">
+	<h1 class="fontSize36">SQLTool</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p>対象とするRDBMSに対して登録済みのクエリーを発行するアプリケーションです。</p>
+	<p>それだけならHerokuのDataClipでもできますが、このアプリには以下の優位性があります。</p>
+	<ul>
+		<li>SELECT文の中にプレースホルダを埋め込むことで<em>パラメータ</em>が使用できます。</li>
+		<li>登録したクエリーを<em>階層構造</em>で整理できます。</li>
+		<li>SELECT結果の<em>ページング</em>と<em>ソート</em>ができます。</li>
+		<li>SELECT結果をダイレクトに<em>グラフ表示</em>できます。</li>
+		<li>指定した時間にSELECT結果のスナップショットを<em>Google Spreadsheetに転記</em>することができます。</li>
+	</ul>
+#{/if}
+#{else}
+	<p>
+		This application allows you to register some queries for specified database, and execute them on the web browser.
+	</p>
+	<p>
+		If you are using Heroku, you know Heroku has a similar tool called DataClip. But this application has following advantages.
+	</p>
+	<ul>
+		<li>You can use <em>parameters</em> in SELECT statatement.</li>
+		<li>You can manage registered query with <em>tree structure</em>.</li>
+		<li>You can do <em>paging and sorting</em> to resultset.</li>
+		<li>You can view resultset as a <em>graph</em>.</li>
+		<li>You can copy resultset to <em>Google Spreadsheet</em> at the specified time.</li>
+	</ul>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"install"}</h2>
+#{if lang == "ja"}
+	<p>デモサイトでマニュアルが公開されているのでそちらを参照してください。</p>
+	<p><a href="http://furoku-sqltool.herokuapp.com/assets/manual/ja/manual.html">マニュアル</a>
+#{/if}
+#{else}
+	<p>We publish a demo site. See its manual page.</p>
+	<p><a href="http://furoku-sqltool.herokuapp.com/assets/manual/ja/manual.html">Manual</a>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"sample"}</h2>
+#{if lang == "ja"}
+	<p>ライブサンプル</p>
+#{/if}
+#{else}
+	<p>Live sample.</p>
+#{/else}
+	<p class="p10"><a href="http://furoku-sqltool.herokuapp.com/" target="_blank">http://furoku-sqltool.herokuapp.com/</a></p>
+#{if lang == "ja"}
+	<p>デモサイトのクエリーは自由に改変、登録して構いませんが毎日深夜にリセットされます。</p>
+#{/if}
+#{else}
+	<p>Though you can freely edit and save queries in the demo site, it will reset everyday(Midnight of JST).</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

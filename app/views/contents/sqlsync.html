@@ -12,8 +12,9 @@
 	#{linkToGithub project: project/}
 	<hr>
 	<h2 class="fontSize24">&{"overview"}</h2>
-	<p><a href="../libs/flectSalesforce.html">flectSalesforce</a>のsqlsyncメソッドのリファレンス実装です。</p>
-	<p>RDBMSのデータを毎日夜間バッチでSalesforceに同期します。</p>
+	<p><a href="/libs/flectSalesforce.html">flectSalesforce</a>のsqlsyncメソッドのリファレンス実装です。</p>
+	<p>登録したSELECT文を毎日夜間バッチで実行してRDBMSのデータをSalesforceに同期します。</p>
+	<p>(SELECT文には更新日付パラメータがWHERE句に必要です。それを基準に差分更新されます。)</p>
 	<hr>
 	<h2 class="fontSize24">&{"environment"}</h2>
 	<p>このアプリケーションはPlayframework2.1で開発されており、実行のためには以下の環境が必要です。</p>

@@ -55,6 +55,17 @@
 		<a class="github" href="https://github.com/shunjikonishi/excel2canvas"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
 	</div>
 	<div>
+		<h3 class="fontSize18">jQuery.formbuilder</h3>
+#{if lang == "ja"}
+		<p class="fontSize14">エラーチェック機能付きのWebフォームをJSON定義から生成するjQueryプラグインです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">A jQuery plugin to make web form from JSON definition.</p>
+#{/else}
+		<a class="detail" href="/libs/jquery-formbuilder.html">&{"viewDetail"}</a>
+		<a class="github" href="https://github.com/shunjikonishi/jquery-formbuilder"><img src="/public/images/GitHub-Mark-32px.png" alt="link to github"></a>
+	</div>
+	<div>
 		<h3 class="fontSize18">sendgrid4j</h3>
 #{if lang == "ja"}
 		<p class="fontSize14"><a href="http://sendgrid.com/" target="_blank">SendGrid</a>のWebAPIのJavaラッパーです。</p>
@@ -215,3 +226,13 @@
 		<a class="detail" href="/apps/forceexplorer.html">&{"viewDetail"}</a>
 	</div>
 </div>
+<script>
+$(function() {
+	$("h3").each(function(index, el) {
+		var $el = $(el),
+			href = $el.parent().find("a.detail").attr("href"),
+			text = $el.text();
+		$el.html("<a href='" + href + "'>" + text + "</a>");
+	});
+});
+</script>

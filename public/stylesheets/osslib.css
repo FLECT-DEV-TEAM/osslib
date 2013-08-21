@@ -4,6 +4,9 @@
 #content .contentData { margin-bottom: 50px;}
 #content .contentDetail { margin-bottom: 50px;}
 
+h3 a:link, h3 a:visited { color: #FFFFFF;}
+h3 a:hover { color: #FFFF00; text-decoration: none;}
+
 .contentData h3 { margin-top: 5px; margin-bottom: 0; padding-top: 2px; padding-bottom: 2px; padding-left: 15px; background: #449dff; color: #fff}
 .contentData div { position: relative; width: 800px; height: auto; border: 1px solid #ccc; border-top: none; margin-bottom: 30px;
 	-webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px;

@@ -17,6 +17,7 @@ public class Application extends Controller {
 	
 	static {
 		add("excel2canvas", true, true);
+		add("jquery-formbuilder", true, true);
 		add("sendgrid4j", true, true);
 		add("papertrailTool", true, true);
 		add("flectCommon", true, true);

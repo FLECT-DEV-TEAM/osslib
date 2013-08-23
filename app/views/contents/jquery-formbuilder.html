@@ -21,80 +21,52 @@
 	<hr>
 	<h2 class="fontSize24">&{"usage"}</h2>
 #{if lang == "ja"}
-    <p>まずJavaで対象とするExcelファイルを読み込んでJSON化します。</p>
+    <p>内容を生成するform要素に対してフォーム定義のJSONを引数にしてメソッドを実行するだけです。</p>
 #{/if}
 #{else}
-    <p>At first, read an excel file and convert it to JSON string.</p>
+    <p>You can get web form by only executing formbuilder method with JSON definition.</p>
 #{/else}
 	<pre>
-    ExcelToCanvasBuilder builder = new ExcelToCanvasBuilder();
-    builder.setIncludeComment(true);<span class="comment">//If need display comments.</span>
-    builder.setIncludeChart(true);<span class="comment">//If need display charts.(Flotr2 is required.)</span>
-    builder.setIncludePicture(true);<span class="comment">//If need display picture.</span>
-    String json = builder.build(new File("Book1.xlsx"), "Sheet1").toJson();</pre>
+    $("#form").formbuilder({
+        "items" : {
+            "name" : {
+                "type" : "text",
+                "required"
+            },
+            ....
+        }
+    });</pre>
 #{if lang == "ja"}
-	<p>次に生成したJSONをHTMLに埋め込んで、div要素に対してexcelToCanvasメソッド(jQueryプラグイン)を適用します。</p>
+	<p>Heroku上にWYSIWYGでフォーム定義を生成するためのエディタアプリケーションが公開されています。</p>
 #{/if}
 #{else}
-    <p>Next, embed JSON string to HTML, and apply jQuery plugin method to a div element that holding a canvas element.</p>
+    <p>There is a WYSIWYG editor application on Heroku.</p>
 #{/else}
-    <pre>${'''
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    
-    <link rel="stylesheet" type="text/css" media="screen,print" href="jquery.excel2canvas.css" />
-    <script type="text/javascript" language="javascript"  src="flotr2.js"></script>
-    <script type="text/javascript" language="javascript"  src="jquery.excel2canvas.min.js"></script>
-    <script type="text/javascript" language="javascript"  src="jquery.excel2chart.flotr2.min.js"></script>
-    
-    <script>
-        $(function() {
-        var data = ${excel.raw()};//Get the JSON string.(Template engine syntax.)
-        $("#canvasHolder").excelToCanvas(data).css("width", $("#canvas").width());
-    });
-    </script>
-    
-    ...
-    
-    <div id="canvasHolder">
-        <canvas id="canvas"></canvas>
-    </div>'''}</pre>
+    <p><a href="https://jquery-formbuilder.herokuapp.com/editor">https://jquery-formbuilder.herokuapp.com/editor</a></p>
 #{if lang == "ja"}
-	<p><a href="http://www.slideshare.net/shunjikonishi/excel2-canvas">SlideShare<a>にもう少し詳細な説明がアップされています。</p>
+	<p>使い方の詳細は<a href="https://jquery-formbuilder.herokuapp.com/assets/manual/ja/manual.html">リファレンス</a>を参照してください。</p>
 #{/if}
 #{else}
-	<p>You can see more detail on <a href="http://www.slideshare.net/shunjikonishi/excel2-canvas">SlideShare<a>.(Japanese only)</p>
+	<p>See detail in <a href="https://jquery-formbuilder.herokuapp.com/assets/manual/ja/manual.html">reference</a>.(Sorry now Japanese only)</p>
 #{/else}
 	<hr>
-	<h2 class="fontSize24">&{"sample"}</h2>
+	<h2 class="fontSize24">&{"advancedFeatures"}</h2>
 #{if lang == "ja"}
-	<p><a href="https://excelnote.herokuapp.com/" target="_blank">ExcelNote</a>はこのライブラリを利用して作成したアプリケーションのひとつです。</p>
-	<p>Evernoteに添付されたExcelファイルをWebブラウザ上に表示します。</p>
-	<p class="p20">以下はそのサンプルです。</p>
+	<p>同じJSON定義をもとに</p>
 	<ul>
-		<li><a href="http://excelnote.herokuapp.com/share/note/s91/90ae165a-18b7-4879-a667-6ad15bbcd57b/5e1a3c243456d0e3daf8bd42005a22e0?theme=humanity" target="_blank">スケジュール表</a></li>
-		<li><a href="http://excelnote.herokuapp.com/share/note/s91/e94bd16f-465a-4a24-b71e-dff906cf3395/67079ce23db9c8af6df06b33d12c8e70?theme=sunny" target="_blank">野球スコア</a></li>
-		<li><a href="https://excelnote.herokuapp.com/share/excel/s91/09880d80-43bd-4728-9f8f-300b84a3a32c/151561d3185ea4c1dc7fa3ab3f2db653?sheet=%E7%99%BA%E6%B3%A8%E6%9B%B8&theme=redmond" target="_blank">注文票</a><br>
-			ブラウザからの印刷もいい感じに印刷されます。
-		</li>
+		<li>サーバーサイドでエラーチェックを行う</li>
+		<li>Saelsforce上にオブジェクトを作成する</li>
 	</ul>
+	<p>ことのできるライブラリもあります。</p>
 #{/if}
 #{else}
-	<p><a href="https://excelnote.herokuapp.com/" target="_blank">ExcelNote</a> is an application that uses this library.</p>
-	<p>If the Excel file is attached in Evernote, it allows you to display it on the web browser.</p>
-	<p class="p20">Followings are some of its samples.(Japanese only)</p>
+	<p>Thare is an other library to do follwing things with same JSON.</p>
 	<ul>
-		<li><a href="http://excelnote.herokuapp.com/share/note/s91/90ae165a-18b7-4879-a667-6ad15bbcd57b/5e1a3c243456d0e3daf8bd42005a22e0?theme=humanity" target="_blank">Time schedule</a></li>
-		<li><a href="http://excelnote.herokuapp.com/share/note/s91/e94bd16f-465a-4a24-b71e-dff906cf3395/67079ce23db9c8af6df06b33d12c8e70?theme=sunny" target="_blank">The result of a baseball game</a></li>
-		<li><a href="https://excelnote.herokuapp.com/share/excel/s91/09880d80-43bd-4728-9f8f-300b84a3a32c/151561d3185ea4c1dc7fa3ab3f2db653?sheet=%E7%99%BA%E6%B3%A8%E6%9B%B8&theme=redmond" target="_blank">Purchase order</a><br>
-			It is able to print as is from web browser.
-		</li>
+		<li>Server side validation.</li>
+		<li>Generate salesforce object.</li>
 	</ul>
 #{/else}
-	<hr>
-	<h2 class="fontSize24">&{"latestRelease"}</h2>
-	<p>&{"download"} - <a href="https://github.com/shunjikonishi/${filename}/archive/version-1.0.zip">1.0</a></p>
-	<p>Maven</p>
-	<pre style="width:800px;">#{repository artifactId: filename, version: "1.0"/}</pre>
+    <p><a href="https://github.com/shunjikonishi/form-validation">https://github.com/shunjikonishi/form-validation</a></p>
 	<hr>
 	<h2 class="fontSize24">&{"license"}</h2>
 	<p>MIT</p>

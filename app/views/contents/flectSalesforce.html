@@ -138,11 +138,17 @@
     SQLSyncRequest request = new SQLSyncRequest(con, sql, "test__c");
     request.setExternalIdFieldName("ExId__c");
     client.syncSQL(request);</pre>
+#{if lang == "ja"}
+	<p>もう少し詳細な<a href="http://flect-salesforce-sample.herokuapp.com/index">説明とサンプル</a>がHeroku上で公開されています。</p>
+#{/if}
+#{else}
+	<p><a href="http://flect-salesforce-sample.herokuapp.com/index">More description and samples</a> are published on Heroku.(Japanese only)</p>
+#{/else}
 	<hr>
 	<h2 class="fontSize24">&{"latestRelease"}</h2>
-	<p>&{"download"} - <a href="https://github.com/shunjikonishi/${filename}/archive/version-1.1.zip">1.1</a></p>
+	<p>&{"download"} - <a href="https://github.com/shunjikonishi/${filename}/archive/version-1.1.1.zip">1.1.1</a></p>
 	<p>Maven</p>
-	<pre style="width:800px;">#{repository artifactId: filename, version: "1.1"/}</pre>
+	<pre style="width:800px;">#{repository artifactId: filename, version: "1.1.1"/}</pre>
 	<hr>
 	<h2 class="fontSize24">&{"license"}</h2>
 	<p>MIT</p>

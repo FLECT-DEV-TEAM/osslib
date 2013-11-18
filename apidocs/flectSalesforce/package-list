@@ -1,0 +1,14 @@
+jp.co.flect.salesforce
+jp.co.flect.salesforce.annotation
+jp.co.flect.salesforce.apex
+jp.co.flect.salesforce.bulk
+jp.co.flect.salesforce.event
+jp.co.flect.salesforce.fixtures
+jp.co.flect.salesforce.io
+jp.co.flect.salesforce.io.csv
+jp.co.flect.salesforce.metadata
+jp.co.flect.salesforce.query
+jp.co.flect.salesforce.search
+jp.co.flect.salesforce.sobject
+jp.co.flect.salesforce.syntax
+jp.co.flect.salesforce.update

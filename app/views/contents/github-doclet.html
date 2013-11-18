@@ -1,0 +1,64 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library - github-doclet' /}
+#{if lang == "ja"}
+	#{set 'description'}各クラスのページにGitHub上のソースへのリンクを差し込むDocletです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}A custom doclet each class pages have link to GitHub.#{/set}
+#{/else}
+<div class="contentDetail">
+	<h1 class="fontSize36">github-doclet</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p class="fontSize14">各クラスのページにGitHub上のソースへのリンクを差し込むDocletです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">A custom doclet each class pages have link to GitHub.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"usage"}</h2>
+#{if lang == "ja"}
+	<p class="fontSize14">Mavenで使用する場合は以下のRepository定義とPlugin定義を追加して「mvn javadoc:javadoc」を実行します。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">If you use maven, add following repository and plugin definitions, and run 'mvn javadoc:javadoc'.</p>
+#{/else}
+<pre>
+    &lt;repositories>
+        &lt;repository>
+            &lt;id>flect&lt;/id>
+            &lt;name>flect&lt;/name>
+            &lt;url>http://flect.github.io/maven-repo/&lt;/url>
+        &lt;/repository>
+    &lt;/repositories>
+
+    &lt;build>
+        &lt;plugins>
+            &lt;plugin>
+                &lt;groupId>org.apache.maven.plugins&lt;/groupId>
+                &lt;artifactId>maven-javadoc-plugin&lt;/artifactId>
+                &lt;version>2.9.1&lt;/version>
+                &lt;configuration>
+                    &lt;doclet>jp.co.flect.doclets.github.Standard&lt;/doclet>
+                    &lt;docletArtifact>
+                        &lt;groupId>jp.co.flect&lt;/groupId>
+                        &lt;artifactId>githubDoclet&lt;/artifactId>
+                        &lt;version>1.0&lt;/version>
+                    &lt;/docletArtifact>
+                    &lt;additionalparam>-github https://github.com/[YOUR USERNAME]/[YOUR REPOSITORY]/tree/master/src/main/java&lt;/additionalparam>
+                    &lt;useStandardDocletOptions>true&lt;/useStandardDocletOptions>
+                &lt;/configuration>
+            &lt;/plugin>
+        &lt;/plugins>
+    &lt;/build>
+</pre>
+	<hr>
+	<h2 class="fontSize24">&{"latestRelease"}</h2>
+	<p>&{"download"} - <a href="https://github.com/shunjikonishi/github-doclet/blob/master/dist/githubDoclet-1.0.jar?raw=true">1.0</a></p>
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

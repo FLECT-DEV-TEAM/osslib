@@ -23,6 +23,7 @@ public class Application extends Controller {
 		add("flectCommon", true, true);
 		add("flectSoap", true, true);
 		add("flectSalesforce", true, true);
+		add("github-doclet", true, true);
 		
 		add("papertrail-log-analyze", true, true);
 		add("sqlsync", false, true);

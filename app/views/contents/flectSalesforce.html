@@ -68,7 +68,7 @@
 	<pre>
     SalesforceClient client = new SalesforceClient(new File("partner.wsdl"));
     UserInfo userInfo = client.login(SALESFORCE_USERNAME, SALESFORCE_PASSWORD, SALESFORCE_SECURITY_TOKEN);
-    System.out.println(userInfo.getUserName() + ", " + userInfo.getDisplayName());</pre>
+    System.out.println(userInfo.getUsername() + ", " + userInfo.getDisplayName());</pre>
 #{if lang == "ja"}
 	<p>クエリー</p>
 #{/if}

@@ -1,0 +1,70 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library - apex-google-api' /}
+#{if lang == "ja"}
+	#{set 'description'}Google Calendar APIをApexから使用するためのライブラリです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}An api wrapper of Google Calendar API for Apex.#{/set}
+#{/else}
+<div class="contentDetail">
+	<h1 class="fontSize36">apex-google-api</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p class="fontSize14">Google Calendar APIをApexから使用するためのライブラリです。</p>
+#{/if}
+#{else}
+		<p class="fontSize14">An api wrapper of Google Calendar API for Apex.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"sample"}</h2>
+#{if lang == "ja"}
+	<p>Service Account認証</p>
+#{/if}
+#{else}
+	<p>Service Account authentication</p>
+#{/else}
+	<pre>
+    SignServer sign = new SignServer('https://YOUR-APPNAME.herokuapp.com/sign');
+    GoogleCalendarService service = new GoogleCalendarService(sign);
+    JWT jwt = new JWT('YOUR-APPACOUNT@developer.gserviceaccount.com');
+    service.authenticate(jwt);</pre>
+#{if lang == "ja"}
+	<p>カレンダー一覧取得</p>
+#{/if}
+#{else}
+	<p>Get list of calendars</p>
+#{/else}
+	<pre>
+    GoogleCalendarService service;
+    GoogleCalendar cal = null;
+    List<GoogleCalendarList> calList = service.listCalendarList().items;
+    for (GoogleCalendar c : calList) {
+        if (c.summary == 'My Calendar') {
+            cal = c;
+            break;
+        }
+    }</pre>
+#{if lang == "ja"}
+	<p>イベント作成</p>
+#{/if}
+#{else}
+	<p>Create event</p>
+#{/else}
+	<pre>
+    GoogleCalendarService service;
+    GoogleCalendar cal;
+    GoogleCalendarEvent event = new GoogleCalendarEvent();
+    event.summary = 'Test Event';
+    event.setDateAndDuration(Datetime.newInstance(2013, 12, 12, 13, 0, 0), 60);//60 minutes
+    event.location = 'Tokyo';
+    event.description = 'Test Event';
+    event.addAttendee('test1@flect.co.jp');
+    event.addAttendee('test2@flect.co.jp');
+    service.insertEvent(event);</pre>
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

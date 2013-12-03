@@ -24,6 +24,7 @@ public class Application extends Controller {
 		add("flectSoap", true, true);
 		add("flectSalesforce", true, true);
 		add("github-doclet", true, true);
+		add("apex-google-api", true, true);
 		
 		add("papertrail-log-analyze", true, true);
 		add("sqlsync", false, true);

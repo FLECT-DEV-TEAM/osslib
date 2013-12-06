@@ -1,0 +1,49 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library - herku-platform-api' /}
+#{if lang == "ja"}
+	#{set 'description'}Heroku Platform APIのJavaラッパーです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}A Java wrapper of Heroku Platform API.#{/set}
+#{/else}
+<div class="contentDetail">
+	<h1 class="fontSize36">heroku-platform-api</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p><a href="https://devcenter.heroku.com/articles/platform-api-reference" target="_blank">Heroku Platform API</a>のJavaラッパーです。</p>
+#{/if}
+#{else}
+	<p>A Java wrapper of <a href="https://devcenter.heroku.com/articles/platform-api-reference" target="_blank">Heroku Platform API</a>.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"usage"}</h2>
+	<p><a href="/apidocs/${filename}/index.html">JavaDoc</a></p>
+	<pre>
+	//Get the url of Heroku authentication page.
+	String oauthUrl = PlatformApi.getOAuthUrl("&lt;YOUR_CLIENT_ID>", Scope.Global);
+	
+	//... Authenticate and get code.
+	
+	PlatformApi api = PlatformApi.fromOAuth("&lt;YOUR_CLIENT_SECRET>", code);
+	
+	//Get application list
+	List<App> appList = api.getAppList();
+	App app = appList.get(0);
+	
+	//heroku ps:scale web=5
+	Formation api.updateFormation(app.getName(), "web", 5, 1);
+	
+	//heroku ps:restart
+	api.restart(app.getName());</pre>
+	<hr>
+	<h2 class="fontSize24">&{"latestRelease"}</h2>
+	<p>&{"download"} - <a href="https://github.com/shunjikonishi/${filename}/archive/version-0.9.zip">0.9</a></p>
+	<p>Maven</p>
+	<pre style="width:800px;">#{repository artifactId: filename, version: "0.9"/}</pre>
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

@@ -25,6 +25,7 @@ public class Application extends Controller {
 		add("flectSalesforce", true, true);
 		add("github-doclet", true, true);
 		add("apex-google-api", true, true);
+		add("heroku-platform-api", true, true);
 		
 		add("papertrail-log-analyze", true, true);
 		add("sqlsync", false, true);

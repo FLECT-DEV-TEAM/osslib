@@ -1,0 +1,49 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library - SalesforceFixture' /}
+#{if lang == "ja"}
+	#{set 'description'}SalesforceFixtureはSalesforceのテストデータ更新ツールです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}Make testdata for Salesforce.#{/set}
+#{/else}
+<div class="contentDetail">
+	<h1 class="fontSize36">SalesforceFixture</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p>YAMLで定義したレコード情報に従ってSalesforce上のデータを作成／更新／削除するアプリケーションです。</p>
+	<p>Salesforceアプリケーション開発時にテストデータを繰り返し同じ状態に戻したい場合などに活用できます。</p>
+#{/if}
+#{else}
+	<p>
+		This application allows you to create/update/delete data on Salesforce by YAML definition.
+	</p>
+	<p>
+		You can use this app to maintain testdata.
+	</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"install"}</h2>
+	<pre>
+    git clone git@github.com:shunjikonishi/salesforce-fixture.git
+    cd salesforce-fixture
+    heroku create
+    git push heroku master
+    heroku config set SALESFORCE_APPID=&lt;SALESFORCE OAUTH_CONSUMER_KEY>
+    heroku config set SALESFORCE_SECRET=&lt;SALESFORCE OAUTH_CONSUMER_SECRET>
+    </pre>
+	<hr>
+	<h2 class="fontSize24">&{"sample"}</h2>
+#{if lang == "ja"}
+	<p>ライブサンプル</p>
+#{/if}
+#{else}
+	<p>Live sample.</p>
+#{/else}
+	<p class="p10"><a href="http://salesforce-fixture.herokuapp.com/" target="_blank">http://salesforce-fixture.herokuapp.com/</a></p>
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

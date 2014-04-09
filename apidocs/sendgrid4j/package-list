@@ -2,4 +2,5 @@ jp.co.flect.sendgrid
 jp.co.flect.sendgrid.event
 jp.co.flect.sendgrid.json
 jp.co.flect.sendgrid.model
+jp.co.flect.sendgrid.model.apps
 jp.co.flect.sendgrid.transport

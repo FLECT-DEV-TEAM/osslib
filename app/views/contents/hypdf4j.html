@@ -1,0 +1,41 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library - hypdf4j' /}
+#{if lang == "ja"}
+	#{set 'description'}HyPDF APIのJavaラッパーです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}HyPDF API wrapper for Java.#{/set}
+#{/else}
+<div class="contentDetail">
+	<h1 class="fontSize36">hypdf4j</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p>Herokuアドオンの<a href="https://addons.heroku.com/hypdf" target="_blank">HyPDF</a> APIラッパーです。</p>
+#{/if}
+#{else}
+	<p><a href="https://addons.heroku.com/hypdf" target="_blank">HyPDF</a> API wrapper for Java.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"usage"}</h2>
+	<p><a href="/apidocs/${filename}/index.html">JavaDoc</a></p>
+	<pre>
+	String username;
+	String password;
+	File outputFile;
+	String contentUrl = "http://......";
+	
+	HyPDF hypdf = new HyPDF(username, password);
+	PdfReference res = hypdf.htmlToPdf(contentUrl);
+	res.writeTo(outputFile);</pre>
+	<hr>
+	<h2 class="fontSize24">&{"latestRelease"}</h2>
+	<p>&{"download"} - <a href="https://github.com/shunjikonishi/${filename}/archive/version-0.9.zip">0.9</a></p>
+	<p>Maven</p>
+	<pre style="width:800px;">#{repository artifactId: filename, version: "0.9"/}</pre>
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

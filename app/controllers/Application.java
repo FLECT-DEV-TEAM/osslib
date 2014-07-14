@@ -17,6 +17,7 @@ public class Application extends Controller {
 	
 	static {
 		add("excel2canvas", true, true);
+		add("hypdf4j", true, true);
 		add("jquery-formbuilder", true, true);
 		add("sendgrid4j", true, true);
 		add("papertrailTool", true, true);
@@ -27,6 +28,7 @@ public class Application extends Controller {
 		add("apex-google-api", true, true);
 		add("heroku-platform-api", true, true);
 		
+		add("hypdf-excel", true, true);
 		add("papertrail-log-analyze", true, true);
 		add("sqlsync", false, true);
 		add("sqltool", true, true);

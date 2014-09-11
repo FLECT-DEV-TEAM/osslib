@@ -27,14 +27,17 @@ public class Application extends Controller {
 		add("github-doclet", true, true);
 		add("apex-google-api", true, true);
 		add("heroku-platform-api", true, true);
+		add("roomframework", true, true);
 		
 		add("hypdf-excel", true, true);
 		add("papertrail-log-analyze", true, true);
 		add("sqlsync", false, true);
 		add("sqltool", true, true);
 		add("salesforce-fixture", true, true);
+		add("quizar", true, true);
 		
 		add("heroku-buildpack-ffmpeg", true, true);
+		add("heroku-buildpack-with-grunt-task", true, true);
 		
 		add("excelReport", true, false);
 		add("forceexplorer", true, false);

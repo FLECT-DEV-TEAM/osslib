@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library - Quizar' /}
+#{if lang == "ja"}
+	#{set 'description'}WebSocketを利用したリアルタイムクイズアプリケーションです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}A realtime quiz application.#{/set}
+#{/else}
+<div class="contentDetail">
+	<h1 class="fontSize36">Quizar</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p class="fontSize14">Quizarは勉強会などで使用できるクイズアプリケーションです。</p>
+	<p class="fontSize14">主催者が出題した問題が参加者の手元の端末に配信され、正答数とタイムで順位を競います。</p>
+#{/if}
+#{else}
+	<p class="fontSize14">A realtime quiz application. It can use in meetup, small party, or seminar.</p>
+	<p class="fontSize14">The quiz published by the organizer delivers all participants at realtime.</p>
+	<p class="fontSize14">And the ranking is also provided at realtime.</p>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"website"}</h2>
+	<p><a href="http://quizar.info/" target="_blank">http://quizar.info/</a></p>
+</div>

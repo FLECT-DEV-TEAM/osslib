@@ -1,0 +1,32 @@
+#{extends 'main.html' /}
+#{set title:'FLECT OSS Library - roomframework' /}
+#{if lang == "ja"}
+	#{set 'description'}roomframeworkはWebSocketアプリケーションを作成するためのフレームワークです。#{/set}
+#{/if}
+#{else}
+	#{set 'description'}roomframework is a freamework for WebSocket applications.#{/set}
+#{/else}
+<div class="contentDetail">
+	<h1 class="fontSize36">roomframework</h1>
+	<a class="detail" href="/index.html">&{"returnToIndex"}</a>
+	#{linkToGithub project: project/}
+	<hr>
+	<h2 class="fontSize24">&{"overview"}</h2>
+#{if lang == "ja"}
+	<p>roomframeworkはWebSocketアプリケーションを作成するためのフレームワークです。</p>
+	<p>クライアントサイドのJavaScriptライブラリである<a href="https://github.com/shunjikonishi/roomframework">roomframework</a>とPlay2用のScalaライブラリである<a href="https://github.com/shunjikonishi/roomframework-play">roomframework-play</a>が連携して、Chatのような一つのルームを複数人が共有するタイプのアプリケーションを簡単に作成できます。</p>
+
+	<p style="margin-top: 20px;"><a href="http://matome.naver.jp/odai/2140228528807488301">Salesforce1 Developers Community MAX</a>というイベントでWebSocketについて講演した際の資料を<a href="http://shunjikonishi.github.io/slides/websocket/index.html">こちら</a>で公開しています。</p>
+#{/if}
+#{else}
+	<p>Roomframework is a framework for WebSocket applications.</p>
+	<p>It consists of two parts.</p>
+	<ul>
+		<li><a href="https://github.com/shunjikonishi/roomframework">roomframework</a> - JavaScript library for client.</li>
+		<li><a href="https://github.com/shunjikonishi/roomframework-play">roomframework-play</a> - Scala library for playframework.</li>
+	</ul>
+#{/else}
+	<hr>
+	<h2 class="fontSize24">&{"license"}</h2>
+	<p>MIT</p>
+</div>

@@ -1,10 +1,10 @@
 #{extends 'main.html' /}
 #{set title:'FLECT OSS Library - ExcelReport' /}
 #{if lang == "ja"}
-	#{set 'description'}ExcelReportはExcelで設計した帳票をブラウザ上で表示、ダウンロードするためのアプリケーションです。#{/set}
+	#{set 'description'}ExcelReportはExcelで設計した帳票フォーマットに値を埋め込んでPDFやExcelファイルとしてダウンロードできるアプリケーションです。#{/set}
 #{/if}
 #{else}
-	#{set 'description'}ExcelReport is a web application for browsing and downloading the report developed by Excel.#{/set}
+	#{set 'description'}ExcelReport allows you to download PDF and Excel generated from Excel template.#{/set}
 #{/else}
 <div class="contentDetail">
 	<h1 class="fontSize36">ExcelReport</h1>
@@ -13,14 +13,16 @@
 	<hr>
 	<h2 class="fontSize24">&{"overview"}</h2>
 #{if lang == "ja"}
-	<p class="fontSize14">Excelで作成した帳票テンプレートに値を埋めてブラウザで表示あるいはダウンロードできるアプリケーションです。</p>
-	<p class="fontSize14">現在はβ版が評価目的でのみ使用できます。</p>
+	<p class="fontSize14">Excelで作成した帳票テンプレートに値を埋めてPDFまたはExcelとしてダウンロードできるアプリケーションです。</p>
+	<p class="fontSize14">Excelで設定した式や入力規則がリアルタイムに反映されるライブフォーム機能もあります。</p>
+	<p class="fontSize14">現在はα版が評価目的でのみ使用できます。</p>
 #{/if}
 #{else}
-	<p class="fontSize14">This application allows you to create a report template by Excel. And you can embed values in it for viewing or downloading.</p>
-	<p class="fontSize14">Now you can use beta version for evalute purpose only.</p>
+	<p class="fontSize14">This application allows you to download PDF and Excel generated from Excel template.</p>
+	<p class="fontSize14">It also has liveform feature. Calculating formula and validation rules are applied at realtime.</p>
+	<p class="fontSize14">Now you can use alpha version for evalute purpose only.</p>
 #{/else}
 	<hr>
-	<h2 class="fontSize24">&{"demo"}</h2>
-	<p><a href="http://excel-report.herokuapp.com/" target="_blank">http://excel-report.herokuapp.com/</a></p>
+	<h2 class="fontSize24">&{"website"}</h2>
+	<p><a href="https://excelreport.net/" target="_blank">https://excelreport.net/</a></p>
 </div>
